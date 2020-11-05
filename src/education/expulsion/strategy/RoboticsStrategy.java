@@ -11,8 +11,6 @@ public class RoboticsStrategy extends ExpulsionStrategy {
             student.setConclusion(facultyIsDisabled());
             return;
         }
-        // В данном случае студент проверяется так же, как и все остальные, а только потом идет проверка предмета ПРОГРАММИРОВАНИЕ
-        super.expulsionProcess(student, config);
 
         conclusion.setExpelled(!student.getSubject().isProgrammingPassed());
         conclusion.setClarification(conclusion.isExpelled() ? "Failed exam: " + programming : programmingPassed);

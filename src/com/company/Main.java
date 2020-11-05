@@ -12,15 +12,16 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        ExpulsionConfig config = new ExpulsionConfig.Builder()
-                .setRobotics(Boolean.parseBoolean(args[0]))
-                .setICE(Boolean.parseBoolean(args[1]))
-                .setSE(Boolean.parseBoolean(args[2]))
-                .setRandom(Boolean.parseBoolean(args[3]))
-                .setFullMoon(Boolean.parseBoolean(args[4]))
-                .build();
+        ExpulsionConfig.Builder builder = new ExpulsionConfig.Builder();
+        if(args.length >= 1) { builder = builder.setRobotics(Boolean.parseBoolean(args[0])); }
+        if(args.length >= 2) { builder = builder.setICE(Boolean.parseBoolean(args[1])); }
+        if(args.length >= 3) { builder = builder.setSE(Boolean.parseBoolean(args[2])); }
+        if(args.length >= 4) { builder = builder.setRandom(Boolean.parseBoolean(args[3])); }
+        if(args.length >= 5) { builder = builder.setFullMoon(Boolean.parseBoolean(args[4])); }
+        ExpulsionConfig config = builder.build();
 
-     /*
+
+        /*
      ExpulsionConfig config = new ExpulsionConfig.Builder()
              .setRobotics(false)
              .setICE(true)
@@ -28,7 +29,8 @@ public class Main {
              .setRandom(false)
              .setFullMoon(false)
              .build();
-      */
+         */
+
 
         System.out.println(config);
 

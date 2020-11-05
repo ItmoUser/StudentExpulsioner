@@ -38,7 +38,6 @@ public abstract class ExpulsionStrategy {
             conclusion.setExpelled(false);
             conclusion.setClarification(allExamsPassed);
         }
-
     }
 
 
